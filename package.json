@@ -1,0 +1,42 @@
+{
+  "name": "react-native-module-boilerplate",
+  "version": "0.1.0",
+  "description": "React Native Module Boilerplate",
+  "main": "src/index.js",
+  "scripts": {
+    "ci": "scripts/local-ci.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/isnifer/react-native-module-boilerplate.git"
+  },
+  "keywords": [
+    "react",
+    "react-native",
+    "ios",
+    "android"
+  ],
+  "author": "Tipsi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/isnifer/react-native-module-boilerplate/issues"
+  },
+  "homepage": "https://github.com/isnifer/react-native-module-boilerplate#readme",
+  "rnpm": {
+    "commands": {
+      "prelink": "node_modules/react-native-module-boilerplate/scripts/pre-link.sh",
+      "postlink": "node_modules/react-native-module-boilerplate/scripts/post-link.sh"
+    }
+  },
+  "peerDependencies": {
+    "react-native": "*"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.0.0",
+    "eslint": "^3.7.1",
+    "eslint-config-airbnb": "^12.0.0",
+    "eslint-plugin-import": "^1.16.0",
+    "eslint-plugin-jsx-a11y": "^2.2.2",
+    "eslint-plugin-react": "^6.3.0"
+  }
+}
