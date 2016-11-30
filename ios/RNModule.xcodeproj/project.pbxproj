@@ -7,9 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		665E38131DEDA42C007CA9FA /* RNModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 665E38121DEDA42C007CA9FA /* RNModule.m */; };
-		665E38141DEDA42C007CA9FA /* RNModule.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 665E38111DEDA42C007CA9FA /* RNModule.h */; };
+		665E38131DEDA42C007CA9FA /* RNModuleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 665E38121DEDA42C007CA9FA /* RNModuleManager.m */; };
+		665E38141DEDA42C007CA9FA /* RNModuleManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 665E38111DEDA42C007CA9FA /* RNModuleManager.h */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		66ABD5021DEDAAD100F706C0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 66ABD4FD1DEDAAD100F706C0 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 83CBBA2E1A601D0E00E9B192;
+			remoteInfo = React;
+		};
+		66ABD5041DEDAAD100F706C0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 66ABD4FD1DEDAAD100F706C0 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2D2A28131D9B038B00D4039D;
+			remoteInfo = "React-tvOS";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		665E380C1DEDA42C007CA9FA /* CopyFiles */ = {
@@ -18,7 +35,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				665E38141DEDA42C007CA9FA /* RNModule.h in CopyFiles */,
+				665E38141DEDA42C007CA9FA /* RNModuleManager.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -26,8 +43,9 @@
 
 /* Begin PBXFileReference section */
 		665E380E1DEDA42C007CA9FA /* libRNModule.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNModule.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		665E38111DEDA42C007CA9FA /* RNModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNModule.h; sourceTree = "<group>"; };
-		665E38121DEDA42C007CA9FA /* RNModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNModule.m; sourceTree = "<group>"; };
+		665E38111DEDA42C007CA9FA /* RNModuleManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNModuleManager.h; sourceTree = "<group>"; };
+		665E38121DEDA42C007CA9FA /* RNModuleManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNModuleManager.m; sourceTree = "<group>"; };
+		66ABD4FD1DEDAAD100F706C0 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../../react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +64,7 @@
 			children = (
 				665E38101DEDA42C007CA9FA /* RNModule */,
 				665E380F1DEDA42C007CA9FA /* Products */,
+				66ABD4FC1DEDAAD100F706C0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,10 +79,27 @@
 		665E38101DEDA42C007CA9FA /* RNModule */ = {
 			isa = PBXGroup;
 			children = (
-				665E38111DEDA42C007CA9FA /* RNModule.h */,
-				665E38121DEDA42C007CA9FA /* RNModule.m */,
+				665E38111DEDA42C007CA9FA /* RNModuleManager.h */,
+				665E38121DEDA42C007CA9FA /* RNModuleManager.m */,
 			);
 			path = RNModule;
+			sourceTree = "<group>";
+		};
+		66ABD4FC1DEDAAD100F706C0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				66ABD4FD1DEDAAD100F706C0 /* React.xcodeproj */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		66ABD4FE1DEDAAD100F706C0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				66ABD5031DEDAAD100F706C0 /* libReact.a */,
+				66ABD5051DEDAAD100F706C0 /* libReact-tvOS.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -110,6 +146,12 @@
 			mainGroup = 665E38051DEDA42C007CA9FA;
 			productRefGroup = 665E380F1DEDA42C007CA9FA /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 66ABD4FE1DEDAAD100F706C0 /* Products */;
+					ProjectRef = 66ABD4FD1DEDAAD100F706C0 /* React.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				665E380D1DEDA42C007CA9FA /* RNModule */,
@@ -117,12 +159,29 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		66ABD5031DEDAAD100F706C0 /* libReact.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libReact.a;
+			remoteRef = 66ABD5021DEDAAD100F706C0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		66ABD5051DEDAAD100F706C0 /* libReact-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libReact-tvOS.a";
+			remoteRef = 66ABD5041DEDAAD100F706C0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXSourcesBuildPhase section */
 		665E380A1DEDA42C007CA9FA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				665E38131DEDA42C007CA9FA /* RNModule.m in Sources */,
+				665E38131DEDA42C007CA9FA /* RNModuleManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +279,10 @@
 		665E38181DEDA42C007CA9FA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../../react-native/React/**",
+					"${SRCROOT}/../../../ios/Pods/Headers/Public/**",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -229,6 +292,10 @@
 		665E38191DEDA42C007CA9FA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../../react-native/React/**",
+					"${SRCROOT}/../../../ios/Pods/Headers/Public/**",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -254,6 +321,7 @@
 				665E38191DEDA42C007CA9FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
