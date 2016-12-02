@@ -1,3 +1,7 @@
 import RNModule from './RNModule'
+import RNComponent from './RNComponent'
 
-export default RNModule
+export {
+    RNModule,
+    RNComponent,
+}

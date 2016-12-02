@@ -11,7 +11,7 @@ import {
   Text,
   View,
 } from 'react-native'
-import RNModule from 'react-native-module-boilerplate'
+import { RNModule, RNComponent } from 'react-native-module-boilerplate'
 
 export default class example extends Component {
   render() {
@@ -21,6 +21,8 @@ export default class example extends Component {
           Welcome to React Native!
         </Text>
         <RNModule />
+        <RNComponent style={{ width: 50, height: 50 }} isRed={true} />
+        <RNComponent style={{ width: 50, height: 50 }} isRed={false} />
         <Text style={styles.instructions}>
           Press Cmd+R to reload,{'\n'}
           Cmd+D or shake for dev menu

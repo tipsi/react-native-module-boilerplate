@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66399AC21DF0490400D167A8 /* RNComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 66399AC11DF0490400D167A8 /* RNComponent.m */; };
+		66399AC71DF049AE00D167A8 /* RNComponentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 66399AC61DF049AE00D167A8 /* RNComponentManager.m */; };
 		665E38131DEDA42C007CA9FA /* RNModuleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 665E38121DEDA42C007CA9FA /* RNModuleManager.m */; };
 		665E38141DEDA42C007CA9FA /* RNModuleManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 665E38111DEDA42C007CA9FA /* RNModuleManager.h */; };
 /* End PBXBuildFile section */
@@ -42,6 +44,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		66399AC01DF0490400D167A8 /* RNComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNComponent.h; sourceTree = "<group>"; };
+		66399AC11DF0490400D167A8 /* RNComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNComponent.m; sourceTree = "<group>"; };
+		66399AC51DF049AE00D167A8 /* RNComponentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNComponentManager.h; sourceTree = "<group>"; };
+		66399AC61DF049AE00D167A8 /* RNComponentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNComponentManager.m; sourceTree = "<group>"; };
 		665E380E1DEDA42C007CA9FA /* libRNModule.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNModule.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		665E38111DEDA42C007CA9FA /* RNModuleManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNModuleManager.h; sourceTree = "<group>"; };
 		665E38121DEDA42C007CA9FA /* RNModuleManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNModuleManager.m; sourceTree = "<group>"; };
@@ -81,6 +87,10 @@
 			children = (
 				665E38111DEDA42C007CA9FA /* RNModuleManager.h */,
 				665E38121DEDA42C007CA9FA /* RNModuleManager.m */,
+				66399AC01DF0490400D167A8 /* RNComponent.h */,
+				66399AC11DF0490400D167A8 /* RNComponent.m */,
+				66399AC51DF049AE00D167A8 /* RNComponentManager.h */,
+				66399AC61DF049AE00D167A8 /* RNComponentManager.m */,
 			);
 			path = RNModule;
 			sourceTree = "<group>";
@@ -182,6 +192,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				665E38131DEDA42C007CA9FA /* RNModuleManager.m in Sources */,
+				66399AC21DF0490400D167A8 /* RNComponent.m in Sources */,
+				66399AC71DF049AE00D167A8 /* RNComponentManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
