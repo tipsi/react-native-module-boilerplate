@@ -11,9 +11,10 @@ export default class RNModuleManagerComponent extends Component {
   render() {
     return (
       <View>
-        <Button onPress={() => RNModuleManager.findCars()}>
-          To get started, edit RNModule.ios.js
-        </Button>
+        <Button
+          title="To get started, edit RNModule.android.js"
+          onPress={() => RNModuleManager.findCars()}
+        />
       </View>
     )
   }
