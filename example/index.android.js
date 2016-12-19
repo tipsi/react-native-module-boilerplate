@@ -11,7 +11,7 @@ import {
   Text,
   View,
 } from 'react-native'
-import RNModule from 'react-native-module-boilerplate'
+import { RNModule } from 'react-native-module-boilerplate'
 
 export default class example extends Component {
   render() {
