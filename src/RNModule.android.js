@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import {
-  TouchableHighlight,
-  Text,
+  Button,
   View,
   NativeModules,
 } from 'react-native'
@@ -12,25 +11,10 @@ export default class RNBoilerplateModuleComponent extends Component {
   render() {
     return (
       <View>
-        <TouchableHighlight
-          onPress={() => {
-            RNBoilerplateModule.findCars().then((cars) => {
-              console.log(cars)
-            })
-          }}>
-          <Text style={styles.instructions}>
-            To get started, edit index.android.js
-          </Text>
-        </TouchableHighlight>
+        <Button onPress={() => RNBoilerplateModule.findCars()}>
+          To get started, edit RNModule.android.js
+        </Button>
       </View>
     )
   }
-}
-
-const styles = {
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
 }
