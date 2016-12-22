@@ -12,7 +12,7 @@ init_new_example_project() {
     android/app/build.gradle
     src
     scripts
-    __tests__/
+    __tests__
   )
 
   mkdir tmp
@@ -20,6 +20,7 @@ init_new_example_project() {
   react-native init $proj_dir_old --version $react_native_version
   cd ..
   mv tmp/$proj_dir_old $proj_dir_new
+  rm -rf $proj_dir_new/__tests__
 
   for i in ${files_to_copy[@]}; do
     if [ -e $proj_dir_old/$i ]; then

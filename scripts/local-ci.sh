@@ -26,7 +26,7 @@ files_to_copy=(
   android/app/build.gradle
   src
   scripts
-  __tests__/
+  __tests__
 )
 
 isMacOS() {
@@ -62,6 +62,8 @@ elif (! $skip_new && ! $use_old); then
   cd ..
   mv tmp/$proj_dir_old $proj_dir_new
   rm -rf tmp
+  # Remove default __tests__ folder from new project directory
+  rm -rf $proj_dir_new/__tests__
   # Copy necessary files from example project
   for i in ${files_to_copy[@]}; do
     if [ -e $proj_dir_old/$i ]; then
