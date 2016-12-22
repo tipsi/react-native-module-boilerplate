@@ -1,6 +1,35 @@
 #!/bin/bash
 
-isOSX() {
+set -e
+
+if [[ $@ == *"--skip-new"* ]]; then
+  skip_new=true
+else
+  skip_new=false
+fi
+
+if [[ $@ == *"--use-old"* ]]; then
+  use_old=true
+else
+  use_old=false
+fi
+
+proj_dir_old=example
+proj_dir_new=example_tmp
+
+react_native_version=$(cat $proj_dir_old/package.json | sed -n 's/"react-native": "\(\^|~\)*\(.*\)",*/\2/p')
+library_name=$(node -p "require('./package.json').name")
+
+files_to_copy=(
+  package.json
+  index.{ios,android}.js
+  android/app/build.gradle
+  src
+  scripts
+  __tests__/
+)
+
+isMacOS() {
   [ "$(uname)" == "Darwin" ]
 }
 
@@ -8,12 +37,44 @@ isOSX() {
 # BEFORE INSTALL  #
 ###################
 
-# Check is OSX
-! isOSX && echo "Current os is not OSX, setup for iOS will be skipped"
-# Go to example project
-cd example
-# Remove react-native-module-boilerplate dependency
-rm -rf node_modules/react-native-module-boilerplate
+# Check is macOS
+! isMacOS && echo "Current os is not macOS, setup for iOS will be skipped"
+# Install react-native-cli if not exist
+if ! type react-native > /dev/null; then
+  npm install -g react-native-cli
+fi
+
+if ($skip_new && ! $use_old); then
+  echo "Creating new example project skipped"
+  # Go to new test project
+  cd $proj_dir_new
+elif (! $skip_new && ! $use_old); then
+  # Remove react-native to avoid affecting react-native init
+  rm -rf node_modules/react-native
+  echo "Creating new example project"
+  # Remove old test project and tmp dir if exist
+  rm -rf $proj_dir_new tmp
+  # Init new test project in tmp directory
+  mkdir tmp
+  cd tmp
+  react-native init $proj_dir_old --version $react_native_version
+  # Move new project from tmp dir and remove tmp dir
+  cd ..
+  mv tmp/$proj_dir_old $proj_dir_new
+  rm -rf tmp
+  # Copy necessary files from example project
+  for i in ${files_to_copy[@]}; do
+    if [ -e $proj_dir_old/$i ]; then
+      cp -Rp $proj_dir_old/$i $proj_dir_new/$i
+    fi
+  done
+  # Go to new test project
+  cd $proj_dir_new
+else
+  echo "Using example folder for tests"
+  # Go to old test project
+  cd $proj_dir_old
+fi
 
 ###################
 # INSTALL         #
@@ -21,8 +82,9 @@ rm -rf node_modules/react-native-module-boilerplate
 
 # Install dependencies
 npm install
-# Install pods
-isOSX && pod install --project-directory=ios
+# Link project
+react-native unlink $library_name
+react-native link
 
 ###################
 # BEFORE BUILD    #
@@ -42,18 +104,18 @@ fi
 # BUILD           #
 ###################
 
-# Configure Stripe variables
-npm run configure
 # Build Android app
-npm run build:android || true
+npm run build:android
 # Build iOS app
-isOSX && (npm run build:ios || true)
+isMacOS && npm run build:ios
 
 ###################
 # TESTS           #
 ###################
 
 # Run Android e2e tests
-npm run test:android || true
+npm run test:android
 # Run iOS e2e tests
-(isOSX && (npm run test:ios || true)) || true
+if isMacOS; then
+  npm run test:ios
+fi
