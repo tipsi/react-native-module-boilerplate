@@ -10,7 +10,7 @@ export default class Example2Custom extends Component {
         </Text>
         <Image
           style={{ width: 50, height: 50 }}
-          source={require('../../img/black_logo.png')}
+          source={require('../img/black_logo.png')}
           accessible
           accessibilityLabel="localImage2"
         />

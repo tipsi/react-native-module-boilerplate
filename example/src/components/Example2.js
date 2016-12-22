@@ -10,7 +10,7 @@ export default class Example2 extends Component {
         </Text>
         <Image
           style={{ width: 50, height: 50 }}
-          source={require('../../img/white_logo.jpg')}
+          source={require('../img/white_logo.jpg')}
         />
       </View>
     )
