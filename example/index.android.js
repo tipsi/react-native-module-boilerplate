@@ -6,6 +6,8 @@ import {
   View,
 } from 'react-native'
 import { RNModule } from 'react-native-module-boilerplate'
+import Example from './src/components/Example'
+import Example2 from './src/components/Example2'
 
 export default class example extends Component {
   render() {
@@ -19,6 +21,8 @@ export default class example extends Component {
           Double tap R on your keyboard to reload,{'\n'}
           Shake or press menu button for dev menu
         </Text>
+        <Example />
+        <Example2 />
       </View>
     )
   }
