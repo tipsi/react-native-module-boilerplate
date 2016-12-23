@@ -8,6 +8,7 @@ init_new_example_project() {
 
   files_to_copy=(
     package.json
+    .babelrc
     index.{ios,android}.js
     android/app/build.gradle
     src

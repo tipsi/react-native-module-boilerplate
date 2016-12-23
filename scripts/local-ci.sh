@@ -22,6 +22,7 @@ library_name=$(node -p "require('./package.json').name")
 
 files_to_copy=(
   package.json
+  .babelrc
   index.{ios,android}.js
   android/app/build.gradle
   src
