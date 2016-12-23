@@ -1,4 +1,4 @@
 {
   "presets": ["react-native"],
-  "plugins": ["import-degradation"]
+  "plugins": [["import-degradation", {"FLAVORS": "custom,tipsi"}]]
 }
