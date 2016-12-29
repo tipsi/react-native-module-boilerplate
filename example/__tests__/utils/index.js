@@ -1,4 +1,6 @@
-export default function elements() {
+import helper from 'tipsi-appium-helper'
+
+helper.elements = function() {
   const { idFromXPath, idFromAccessId } = this
 
   const selectors = {
@@ -22,4 +24,6 @@ export default function elements() {
 
     return memo
   }, {})
-}
+}.bind(helper)
+
+export default helper
