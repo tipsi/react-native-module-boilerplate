@@ -14,12 +14,11 @@ helper.elements = function() {
     },
   }
 
-
   return Object.keys(selectors).reduce((memo, item) => {
     const currentImplementation = selectors[item][this.config.platformName]
     if (currentImplementation) {
       /* eslint no-param-reassign: 0 */
-      memo[item] = selectors[item][this.config.platformName]
+      memo[item] = currentImplementation
     }
 
     return memo
