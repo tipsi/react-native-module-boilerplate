@@ -96,6 +96,7 @@ react-native link
 
 # Run appium
 (pkill -9 -f appium || true)
+npm run appium > /dev/null 2>&1 &
 
 ###################
 # BUILD           #
