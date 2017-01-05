@@ -18,14 +18,12 @@
   "dependencies": {
     "react": "15.4.1",
     "react-native": "0.39.2",
-    "react-native-module-boilerplate": "../",
-    "tipsi-appium-helper": "1.0.0"
+    "react-native-module-boilerplate": "../"
   },
   "devDependencies": {
     "appium": "1.6.3",
-    "babel-preset-react-native": "1.9.0",
     "npm-run-all": "^3.1.1",
-    "tape": "^4.6.2",
-    "tape-async": "^2.1.1"
+    "tape-async": "^2.1.1",
+    "tipsi-appium-helper": "1.0.0"
   }
 }

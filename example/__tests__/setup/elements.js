@@ -1,6 +1,6 @@
 import helper from 'tipsi-appium-helper'
 
-helper.elements = function() {
+helper.extend('elements', function () {
   const { idFromXPath, idFromAccessId } = this
 
   const selectors = {
@@ -23,6 +23,4 @@ helper.elements = function() {
 
     return memo
   }, {})
-}.bind(helper)
-
-export default helper
+})

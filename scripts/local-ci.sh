@@ -95,14 +95,7 @@ react-native link
 ###################
 
 # Run appium
-appiumPID=$(ps -A | grep -v grep | grep appium | awk '{print $1}')
-if [ -z $appiumPID ]; then
-  npm run appium > /dev/null 2>&1 &
-else
-  echo "appium is already running, restart appium"
-  kill -9 $appiumPID
-  npm run appium > /dev/null 2>&1 &
-fi
+(pkill -9 -f appium || true)
 
 ###################
 # BUILD           #
