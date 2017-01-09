@@ -1,4 +1,5 @@
 # react-native-module-boilerplate
+[![Build Status](https://travis-ci.org/tipsi/react-native-module-boilerplate.svg?branch=master)](https://travis-ci.org/tipsi/react-native-module-boilerplate)
 
 1. Fork project
 
