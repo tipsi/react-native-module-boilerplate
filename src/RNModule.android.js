@@ -11,9 +11,10 @@ export default class RNBoilerplateModuleComponent extends Component {
   render() {
     return (
       <View>
-        <Button onPress={() => RNBoilerplateModule.findCars()}>
-          To get started, edit RNModule.android.js
-        </Button>
+        <Button
+          title="To get started, edit RNModule.android.js"
+          onPress={() => RNBoilerplateModule.findCars()}
+        />
       </View>
     )
   }

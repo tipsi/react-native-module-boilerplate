@@ -1,4 +1,6 @@
-export default function elements() {
+import helper from 'tipsi-appium-helper'
+
+helper.extend('elements', function () {
   const { idFromXPath, idFromAccessId } = this
 
   const selectors = {
@@ -12,14 +14,13 @@ export default function elements() {
     },
   }
 
-
   return Object.keys(selectors).reduce((memo, item) => {
     const currentImplementation = selectors[item][this.config.platformName]
     if (currentImplementation) {
       /* eslint no-param-reassign: 0 */
-      memo[item] = selectors[item][this.config.platformName]
+      memo[item] = currentImplementation
     }
 
     return memo
   }, {})
-}
+})
