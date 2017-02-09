@@ -43,7 +43,7 @@ isMacOS() {
 ! isMacOS && echo "Current os is not macOS, setup for iOS will be skipped"
 # Install react-native-cli if not exist
 if ! type react-native > /dev/null; then
-  npm install -g react-native-cli
+  yarn install -g react-native-cli
 fi
 
 if ($skip_new && ! $use_old); then
@@ -96,24 +96,24 @@ react-native link
 
 # Run appium
 (pkill -9 -f appium || true)
-npm run appium > /dev/null 2>&1 &
+yarn run appium > /dev/null 2>&1 &
 
 ###################
 # BUILD           #
 ###################
 
 # Build Android app
-npm run build:android
+yarn run build:android
 # Build iOS app
-isMacOS && npm run build:ios
+isMacOS && yarn run build:ios
 
 ###################
 # TESTS           #
 ###################
 
 # Run Android e2e tests
-npm run test:android
+yarn run test:android
 # Run iOS e2e tests
 if isMacOS; then
-  npm run test:ios
+  yarn run test:ios
 fi
